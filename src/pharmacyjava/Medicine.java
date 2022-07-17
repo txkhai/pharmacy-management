@@ -58,8 +58,6 @@ java.sql.Date MyFDate, MyEDate;
         MedName = new javax.swing.JTextField();
         MedPrice2 = new javax.swing.JTextField();
         MedQty = new javax.swing.JTextField();
-        MedNSX = new com.toedter.calendar.JDateChooser();
-        MedHSD = new com.toedter.calendar.JDateChooser();
         MedComp = new javax.swing.JComboBox<>();
         AddBtn = new javax.swing.JButton();
         UpdateBtn = new javax.swing.JButton();
@@ -74,6 +72,8 @@ java.sql.Date MyFDate, MyEDate;
         MedPrice1 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        MedNSX = new com.toedter.calendar.JDateChooser();
+        MedHSD = new com.toedter.calendar.JDateChooser();
         AgentsBtn = new javax.swing.JLabel();
         SellingBtn = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -129,12 +129,6 @@ java.sql.Date MyFDate, MyEDate;
         MedPrice2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         MedQty.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        MedNSX.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        MedNSX.setPreferredSize(new java.awt.Dimension(87, 25));
-
-        MedHSD.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        MedHSD.setPreferredSize(new java.awt.Dimension(87, 25));
 
         MedComp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         MedComp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -202,7 +196,6 @@ java.sql.Date MyFDate, MyEDate;
             }
         ));
         MedTable.setOpaque(false);
-        MedTable.setRowHeight(20);
         MedTable.setSelectionBackground(new java.awt.Color(4, 127, 49));
         MedTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -304,10 +297,10 @@ java.sql.Date MyFDate, MyEDate;
                                     .addComponent(MedQty, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(MedNSX, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(MedComp, 0, 146, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(MedHSD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(MedComp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(MedNSX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(120, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
@@ -318,18 +311,19 @@ java.sql.Date MyFDate, MyEDate;
                 .addComponent(jLabel1)
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel7)
-                        .addComponent(MedID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(MedNSX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel8)
-                        .addComponent(MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(MedHSD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel7)
+                                .addComponent(MedID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(MedNSX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel8)
+                            .addComponent(MedName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(MedHSD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
